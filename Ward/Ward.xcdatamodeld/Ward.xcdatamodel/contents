@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19197" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="current_location" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="insurance_number" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="measures_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Measure" inverseName="patient" inverseEntity="Measure"/>
+    </entity>
+    <entity name="Measure" representedClassName="Measure" syncable="YES" codeGenerationType="class">
+        <attribute name="blood_pressure" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="blood_pressure_diastole" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="droped" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="patient_uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="probe_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pulse" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="measures_" inverseEntity="Item"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-175.0433349609375" positionY="-263.284912109375" width="117.1488037109375" height="178"/>
+        <element name="Measure" positionX="164.6409912109375" positionY="-204.9111328125" width="128" height="179"/>
+    </elements>
+</model>
